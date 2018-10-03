@@ -41,6 +41,7 @@
     "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron .",
     "electron-pack": "build -c.extraMetadata.main=build/electron.js",
     "electron-pack-win": "build -c.extraMetadata.main=build/electron.js --win",
+    "electron-pack-mac": "build -c.extraMetadata.main=build/electron.js --mac",
     "preelectron-pack": "yarn build"
   },
   "devDependencies": {
@@ -70,6 +71,20 @@
     "win": {
       "target": [
         "zip"
+      ]
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
       ]
     }
   }
