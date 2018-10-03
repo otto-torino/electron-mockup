@@ -1,21 +1,60 @@
 // ./main.js
-const url = require('url');
-const path = require('path');
-const { app, BrowserWindow } = require('electron');
+const url = require('url')
+const path = require('path')
+const { app, BrowserWindow, Menu, shell } = require('electron')
 
-let win = null;
+let win = null
+
+function createMenu (win) {
+  var menu = Menu.buildFromTemplate([
+    {
+      label: 'App',
+      submenu: [
+        {
+          label: 'Quit',
+          click () {
+            app.quit()
+          }
+        }
+      ]
+    },
+    {
+      label: 'Help',
+      submenu: [
+        {
+          label: 'Start Tour',
+          click () {
+            win.webContents.send('start-help-tour')
+          }
+        },
+        {
+          label: 'Report Issue',
+          click () {
+            shell.openExternal('https://github.com/otto-torino/electron-mockup/issues')
+          }
+        }
+      ]
+    }
+  ])
+
+  return menu
+}
 
 function createWindow () {
   // Initialize the window to our specified dimensions
-  win = new BrowserWindow({ width: 1000, height: 600 });
+  win = new BrowserWindow({ width: 1000, height: 600 })
 
   // Specify entry point
-  const startUrl = process.env.ELECTRON_START_URL || url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  });
-  win.loadURL(startUrl);
+  const startUrl =
+    process.env.ELECTRON_START_URL ||
+    url.format({
+      pathname: path.join(__dirname, 'index.html'),
+      protocol: 'file:',
+      slashes: true
+    })
+  win.loadURL(startUrl)
+
+  Menu.setApplicationMenu(createMenu(win))
 
   // Show dev tools
   // Remove this line before distributing
@@ -23,26 +62,26 @@ function createWindow () {
 
   // Remove window once app is closed
   win.on('closed', function () {
-    win = null;
-  });
+    win = null
+  })
 }
 
 app.on('ready', function () {
-  createWindow();
-});
+  createWindow()
+})
 
 app.on('activate', () => {
   if (win === null) {
-    createWindow();
+    createWindow()
   }
-});
+})
 
 app.on('browser-window-created', function (e, window) {
-  window.setMenu(null);
+  // window.setMenu(null)
 })
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
-    app.quit();
+    app.quit()
   }
-});
+})

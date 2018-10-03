@@ -19,11 +19,17 @@ import history from '../../history'
 
 import './styles.css'
 
+const electron = window.require('electron')
+
 class MockupRevisionView extends React.Component {
   constructor () {
     super()
     this.runTour = this.runTour.bind(this)
     this.handleTourCallback = this.handleTourCallback.bind(this)
+
+    electron.ipcRenderer.on('start-help-tour', event => {
+      this.runTour()
+    })
   }
 
   componentDidMount () {

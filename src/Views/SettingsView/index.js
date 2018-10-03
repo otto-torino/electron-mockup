@@ -15,10 +15,13 @@ import {
   Message,
   Checkbox
 } from 'semantic-ui-react'
+import { toast } from 'react-toastify'
 import config from '../../Config'
 import Footer from '../../Components/Footer'
 
 import './styles.css'
+
+const electron = window.require('electron')
 
 class SettingsView extends React.Component {
   constructor (props) {
@@ -30,6 +33,10 @@ class SettingsView extends React.Component {
     this.toggleDocumentNotification = this.toggleDocumentNotification.bind(
       this
     )
+
+    electron.ipcRenderer.on('start-help-tour', event => {
+      this.runTour()
+    })
   }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
@@ -48,6 +55,10 @@ class SettingsView extends React.Component {
         content = this.infoContent()
     }
     return content
+  }
+
+  runTour () {
+    toast.info('Help tour is not available in this section')
   }
 
   infoContent () {
