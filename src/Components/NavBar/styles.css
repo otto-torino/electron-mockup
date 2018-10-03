@@ -1,0 +1,22 @@
+.ui.menu {
+  border-radius: 0;
+}
+
+.actions-menu i {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0 0 30px !important;
+}
+
+.actions-menu > .icon-comments-wrapper {
+  margin-left: 30px;
+  position: relative;
+}
+
+.actions-menu i:first-child {
+  margin-left: 0 !important;
+}
+
+.actions-menu i:last-child {
+  margin-right: 0 !important;
+}

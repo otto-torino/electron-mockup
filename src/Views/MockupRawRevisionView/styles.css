@@ -1,0 +1,11 @@
+.page-mockup-raw-revision {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-mockup-raw-revision .iframe-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}

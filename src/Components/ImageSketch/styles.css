@@ -1,0 +1,26 @@
+.sketch {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: auto;
+}
+
+.sketch-toolbar {
+  margin-bottom: 16px;
+}
+
+.sketch-stroke-trigger {
+  align-items: center;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  width: 21px;
+}
+
+.sketch-stroke-trigger > span {
+  background: #fff;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+}

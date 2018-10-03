@@ -1,0 +1,53 @@
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* navbar gravatar */
+.navbar-gravatar {
+  display: inline-block !important;
+  height: 30px;
+  margin-left: 5px;
+}
+
+/* list */
+.list-description {
+  color: #999;
+  font-size: .9em;
+}
+
+/* form */
+.ui.multiple.selection .label {
+  margin-right: 8px !important;
+  margin-top: 3px !important;
+}
+
+/* revision sidebar */
+.sidebar-revision {
+  background: #fff;
+}
+
+/* comments sidebar */
+.sidebar-comments {
+  background: #fff;
+}
+
+/* footer */
+.app-footer {
+  align-items: center;
+  background: #cecece;
+  color: #000;
+  margin-top: 2rem;
+  padding:  4px 2rem;
+}
+
+/* tour */
+.joyride-tooltip__main {
+  font-size: .9em !important;
+}

@@ -1,0 +1,49 @@
+.page-mockup-revision {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-mockup-revision .pushable {
+  flex: 1;
+  margin-top: 0rem;
+}
+
+.page-mockup-revision .iframe-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.page-mockup-revision iframe {
+  min-height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.page-mockup-revision {
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.sidebar-container,
+.sidebar-container > .pusher,
+.sidebar-container > .pusher > div,
+.sidebar-container > .pusher > div > main,
+.sidebar-container > .pusher > div > main > .iframe-container {
+  min-height: 100vh !important;
+}
+
+.page-mockup-revision iframe {
+  height: 100vh !important;
+}
+
+.page-mockup-revision .ui.menu {
+  margin-bottom: 0;
+}
+
+.page-mockup-revision .app-footer {
+  margin-top: 0
+}

@@ -1,0 +1,76 @@
+{
+  "name": "mockups-app",
+  "version": "0.1.0",
+  "author": "Stefano Contini <abidibo@gmail.com>",
+  "private": true,
+  "main": "./public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "apisauce": "^0.14.3",
+    "core-js": "^2.5.7",
+    "fabric": "1.7.22",
+    "history": "^4.7.2",
+    "jquery": "^3.3.1",
+    "js-md5": "^0.7.3",
+    "moment": "^2.20.1",
+    "qrcode.react": "^0.7.2",
+    "rc-color-picker": "^1.2.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-joyride": "^1.11.2",
+    "react-live-clock": "^2.0.2",
+    "react-markdown": "^3.2.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "react-scripts": "1.1.0",
+    "react-toastify": "^3.3.2",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0",
+    "redux-thunk": "^2.2.0",
+    "reduxsauce": "^0.7.0",
+    "semantic-ui-css": "^2.2.14",
+    "semantic-ui-react": "^0.77.2",
+    "sockette": "^1.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-dev": "ELECTRON_START_URL=http://localhost:3000 electron .",
+    "electron-pack": "build -c.extraMetadata.main=build/electron.js",
+    "electron-pack-win": "build -c.extraMetadata.main=build/electron.js --win",
+    "preelectron-pack": "yarn build"
+  },
+  "devDependencies": {
+    "contextify": "^1.0.0",
+    "electron-builder": "^20.28.4",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "build": {
+    "appId": "it.to.otto.mockups",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories":{
+      "buildResources": "assets"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip"
+      ]
+    }
+  }
+}
